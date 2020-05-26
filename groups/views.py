@@ -11,12 +11,12 @@ class CreateGroup(LoginRequiredMixin,generic.CreateView):
     fields=('name','description')
     model=Group
 
-class SingleGroup(generic.DetailView):
+class SingleGroup(LoginRequiredMixin,generic.DetailView):
     model=Group
 
 # Create your views here.
 
-class ListGroup(generic.ListView):
+class ListGroup(LoginRequiredMixin,generic.ListView):
     model=Group
 
 class JoinGroup(LoginRequiredMixin,generic.RedirectView):
