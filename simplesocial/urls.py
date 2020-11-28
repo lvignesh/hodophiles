@@ -20,6 +20,13 @@ from . import views
 
 urlpatterns = [
     path('',views.HomePage.as_view(),name="home"),
+    path('munnar/',views.MunnarPage.as_view(),name="munnar"),
+    path('alappuzha/',views.AlappuzhaPage.as_view(),name="alappuzha"),
+    path('kottayam/',views.KottayamPage.as_view(),name="kottayam"),
+    path('kannur/',views.KannurPage.as_view(),name="kannur"),
+    path('wayanad/',views.WayanadPage.as_view(),name="wayanad"),
+    path('thrissur/',views.ThrissurPage.as_view(),name="thrissur"),
+    path('connect/',views.ConnectPage.as_view(),name="connect"),
     path('admin/', admin.site.urls),
     path('accounts/',include('accounts.urls')),
     path('accounts/',include('django.contrib.auth.urls')),

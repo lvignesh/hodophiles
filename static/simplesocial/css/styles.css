@@ -1,0 +1,15 @@
+body {
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #333;
+   background: linear-gradient(to bottom, #00E0FF, #FF4747, #fff);
+}
+.board button{
+	width: 100px;
+	height: 100px;
+	background-color: rgb(255, 240, 12);
+	border-radius: 50%;
+	margin: 1px;
+	border:4px solid black;
+}

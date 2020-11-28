@@ -3,7 +3,7 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>KJP</title>
+    <title>HODOPHILE</title>
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
@@ -12,12 +12,13 @@
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
 
     <link rel="stylesheet" href="{% static 'simplesocial/css/master.css' %}">
+    <link rel="stylesheet" href="{% static 'simplesocial/css/style.css' %}">
 
   </head>
-  <body style="background-color:#161625">
+  <body style="background-color: white">
     <nav class="navbar mynav" role='navigation' id='navbar'>
       <div class="container">
-        <a href="{% url 'home' %}" class="navbar-brand mynav">KJP</a>
+        <a href="{% url 'home' %}" class="navbar-brand mynav">HODOPHILE</a>
         <ul class="nav navbar-nav navbar-right">
           {% if user.is_authenticated %}
             <li><a href="{% url 'posts:create' %}">Post</a></li>

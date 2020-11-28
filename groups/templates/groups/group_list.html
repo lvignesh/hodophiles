@@ -6,11 +6,11 @@
       {% if user.is_authenticated %}
         <h1>Welcome Back! <a href="{% url 'posts:for_user' username=user.username %}">@{{user.username}}</a></h1>
       {% endif %}
-      <h2>Groups</h2>
-      <p>Welcome to Groups page!</p>
+      <h2 style="font-size: 25px;">Your Groups</h2>
+      <p style="padding-bottom: 20px; font-size: 20px;">Welcome to Groups page!</p>
     </div>
     {% if user.is_authenticated %}
-      <a href="{% url 'groups:create' %}" class="btn btn-md  btn-success" style="color:black;"><span class="glyphicon glyphicon-plus-sign" style="margin-top:5px;"></span>Create Group</a>
+      <a href="{% url 'groups:create' %}" class="mu-send-msg-btn" style="color:black; margin-top: 25px;"><span class="glyphicon glyphicon-plus-sign" style="margin-top:20px margin-right:20px;"></span>  Create Group</a>
     {% endif %}
   <br><br>
   </div>
