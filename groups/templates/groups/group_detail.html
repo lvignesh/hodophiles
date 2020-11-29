@@ -8,7 +8,7 @@
     <a href="{% url 'groups:leave' slug=group.slug %}" class="btn btn-success btn-lg" style="border-radius: 20px;"><span class="glyphicon glyphicon-remove-circle"></span>   Leave</a>
     
     {% else %}
-    <a href="{% url 'groups:join' slug=group.slug %}" class="btn btn-success btn-lg"><span class="glyphicon glyphicon-ok-circle"></span>Join</a>
+    <a href="{% url 'groups:join' slug=group.slug %}" class="btn btn-success btn-lg" style="border-radius: 20px;><span class="glyphicon glyphicon-ok-circle"></span>Join</a>
   {% endif %}
 </div>
 {% endblock %}
@@ -18,7 +18,7 @@
 
   <div class="col-md-6">
     {% if group.posts.count == 0 %}
-      <h2>Start Posting</h2>
+     <h1><a href="{% url 'posts:create' %}" style="color: blue";>StartPosting</a></h1>
     {% else %}
       {% for post in group.posts.all %}
         {% include "posts/_post.html" %}
