@@ -1,6 +1,11 @@
 <div class="post-media">
-  <h4>{{post.message|safe}}</h4>
+  {% if user.is_authenticated and post.user == user %}
+  <h4 style="color: red; font-size: 20px;">{{post.message|safe}}</h4>
+  {% else %}
+  <h4 style="font-size: 20px;"> {{post.message|safe}}</h4>
+  {% endif %}
   <p style="margin-bottom: 1px;" class="username"><a href="{% url 'posts:for_user' username=post.user.username %}" style="font-size: 15px; margin-bottom: 25px;">@{{post.user.username}}</a> ,      {{post.created_at}}</p>
+
   <div class="media-body">
 
     <h5 class="media-heading">

@@ -5,10 +5,10 @@
 <h2>Member Count:{{group.members.count}}</h2>
 <div class="content">
   {% if user in group.members.all %}
-    <a href="{% url 'groups:leave' slug=group.slug %}" class="btn btn-success btn-lg" style="border-radius: 20px;"><span class="glyphicon glyphicon-remove-circle"></span>   Leave</a>
-    
+    <a href="{% url 'groups:leave' slug=group.slug %}" class="btn btn-danger btn-sm" style="border-radius: 20px;"><span class="glyphicon glyphicon-remove-circle"></span>Leave</a>
+    <a href="{% url 'posts:create' %}" class="btn btn-warning btn-sm" style="border-radius: 20px;">Post</a>
     {% else %}
-    <a href="{% url 'groups:join' slug=group.slug %}" class="btn btn-success btn-lg" style="border-radius: 20px;><span class="glyphicon glyphicon-ok-circle"></span>Join</a>
+    <a href="{% url 'groups:join' slug=group.slug %}" class="btn btn-success btn-sm" style="border-radius: 20px;"><span class="glyphicon glyphicon-ok-circle"></span>Join</a>
   {% endif %}
 </div>
 {% endblock %}
@@ -17,6 +17,7 @@
 {% block group_content %}
 
   <div class="col-md-6">
+     {% if user in group.members.all %}
     {% if group.posts.count == 0 %}
      <h1><a href="{% url 'posts:create' %}" style="color: blue";>StartPosting</a></h1>
     {% else %}
@@ -24,6 +25,11 @@
         {% include "posts/_post.html" %}
       {% endfor %}
     {% endif %}
+    {% else %}
+        <h1>To read posts please join the group</h1>
+      {% endif %}
+
+      
   </div>
 
 {% endblock %}
